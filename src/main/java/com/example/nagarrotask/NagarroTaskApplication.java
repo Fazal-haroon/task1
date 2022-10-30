@@ -32,13 +32,13 @@ public class NagarroTaskApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        template.update("INSERT INTO account(account_type, account_number) VALUES('test', '1233443543')");
 
-        List<Account> accountList = template.query("SELECT ID, account_type, account_number FROM account", new RowMapper<Account>() {
-            @Override
-            public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
-                return new Account(rs.getInt("ID"), rs.getString("account_type"), rs.getString("account_number"));
-            }
-        });
-        accountList.forEach(System.out::println);
+//        List<Account> accountList = template.query("SELECT ID, account_type, account_number FROM account", new RowMapper<Account>() {
+//            @Override
+//            public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
+//                return new Account(rs.getInt("ID"), rs.getString("account_type"), rs.getString("account_number"));
+//            }
+//        });
+//        accountList.forEach(System.out::println);
 
     }
 }

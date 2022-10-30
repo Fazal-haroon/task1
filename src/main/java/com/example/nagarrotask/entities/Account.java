@@ -1,6 +1,8 @@
 package com.example.nagarrotask.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -23,6 +25,11 @@ public class Account {
         return account_type;
     }
 
+    /**
+     * It takes the account number, hashes it, and returns the hash
+     *
+     * @return The account number is being returned.
+     */
     public String getAccount_number() throws NoSuchAlgorithmException {
         String plaintext = this.account_number;
         MessageDigest m = MessageDigest.getInstance("MD5");
@@ -38,6 +45,11 @@ public class Account {
         return hashtext;
     }
 
+    /**
+     * The toString() method returns a string representation of the object
+     *
+     * @return The account ID, account type, and account number.
+     */
     @Override
     public String toString() {
         return "Account{" +

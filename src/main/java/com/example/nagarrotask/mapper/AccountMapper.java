@@ -9,12 +9,20 @@ import java.util.List;
 
 @Mapper
 public interface AccountMapper {
+    /**
+     * Get all accounts from the database.
+     *
+     * @return A list of all the accounts in the database.
+     */
     @Select("SELECT * FROM account")
     List<Account> getAllAccounts();
 
-    @Select("SELECT * FROM account WHERE ID = #{id}")
-    List<Account> findById(@PathParam("id") final Integer id);
-
+    /**
+     * Get the account with the given id.
+     *
+     * @param id The id of the account to retrieve
+     * @return An Account object
+     */
     @Select("SELECT * FROM account WHERE ID = #{id}")
     Account getAccount(@PathParam("id") final Integer id);
 }

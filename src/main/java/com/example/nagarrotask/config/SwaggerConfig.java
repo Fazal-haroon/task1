@@ -12,6 +12,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+    /**
+     * It creates a Docket bean which is used by the swagger2 feature to generate the swagger documentation.
+     *
+     * @return Docket
+     */
     @Bean
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)

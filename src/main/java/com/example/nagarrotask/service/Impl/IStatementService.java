@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -36,8 +35,4 @@ public class IStatementService implements StatementService {
         return statementMapper.getData_between(dec1, dec2);
     }
 
-//    @Override
-//    public List<Statement> getData_between(LocalDate fromDate, LocalDate toDate) {
-//        return statementMapper.getData_between(fromDate, toDate);
-//    }
 }

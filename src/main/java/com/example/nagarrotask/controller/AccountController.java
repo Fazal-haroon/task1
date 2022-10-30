@@ -1,7 +1,8 @@
 package com.example.nagarrotask.controller;
 
 import com.example.nagarrotask.entities.Account;
-import com.example.nagarrotask.mapper.AccountMapper;
+import com.example.nagarrotask.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,19 +15,28 @@ import java.util.List;
 @RequestMapping("/account")
 public class AccountController {
 
-    private AccountMapper accountMapper;
+    // Injecting the AccountService class into the AccountController class.
+    @Autowired
+    private AccountService accountService;
 
-    public AccountController(AccountMapper accountMapper) {
-        this.accountMapper = accountMapper;
-    }
-
+    /**
+     * It returns a list of all accounts.
+     *
+     * @return A list of all accounts
+     */
     @GetMapping("/all")
     public ResponseEntity<List<Account>> getAllAccounts(){
-        return ResponseEntity.ok(accountMapper.getAllAccounts());
+        return accountService.getAllAccounts();
     }
 
+    /**
+     * It returns the account with the given id.
+     *
+     * @param id The id of the account to be retrieved.
+     * @return ResponseEntity<Account>
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Account> getAccount(@PathVariable int id){
-        return ResponseEntity.ok(accountMapper.getAccount(id));
+        return accountService.getAccount(id);
     }
 }
