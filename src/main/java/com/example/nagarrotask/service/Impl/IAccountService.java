@@ -16,12 +16,12 @@ public class IAccountService implements AccountService {
     private AccountMapper accountMapper;
 
     @Override
-    public ResponseEntity<List<Account>> getAllAccounts() {
-        return ResponseEntity.ok(accountMapper.getAllAccounts());
+    public List<Account> getAllAccounts() {
+        return accountMapper.getAllAccounts();
     }
 
     @Override
-    public ResponseEntity<Account> getAccount(int id) {
-        return ResponseEntity.ok(accountMapper.getAccount(id));
+    public Account getAccount(int id) {
+        return accountMapper.getAccount(id);
     }
 }

@@ -20,23 +20,23 @@ public class AccountController {
     private AccountService accountService;
 
     /**
-     * It returns a list of all accounts.
+     * The function is a GET request that returns a list of all accounts
      *
      * @return A list of all accounts
      */
     @GetMapping("/all")
-    public ResponseEntity<List<Account>> getAllAccounts(){
+    public List<Account> getAllAccounts(){
         return accountService.getAllAccounts();
     }
 
     /**
-     * It returns the account with the given id.
+     * The function takes an id as a path variable, and returns an account object
      *
-     * @param id The id of the account to be retrieved.
-     * @return ResponseEntity<Account>
+     * @param id The id of the account to retrieve.
+     * @return Account
      */
     @GetMapping("/{id}")
-    public ResponseEntity<Account> getAccount(@PathVariable int id){
+    public Account getAccount(@PathVariable int id){
         return accountService.getAccount(id);
     }
 }

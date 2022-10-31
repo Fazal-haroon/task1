@@ -8,17 +8,18 @@ import java.util.List;
 public interface AccountService {
 
     /**
-     * Get all accounts.
+     * This function returns a list of all accounts.
      *
-     * @return A list of all accounts
+     * @return A list of all accounts in the database.
      */
-    ResponseEntity<List<Account>> getAllAccounts();
+    List<Account> getAllAccounts();
+
 
     /**
-     * Get the account with the given id.
+     * Get an account by id.
      *
-     * @param id The id of the account to retrieve.
-     * @return An Account object
+     * @param id The id of the account to get.
+     * @return Account
      */
-    ResponseEntity<Account> getAccount(int id);
+    Account getAccount(int id);
 }
