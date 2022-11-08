@@ -19,7 +19,7 @@ public interface StatementService {
      * @param amount2 The upper bound of the amount.
      * @return A list of statements that have an amount between the two amounts given.
      */
-    List<Statement> getAmount_between(String amount1, String amount2);
+    List<Statement> getAmountBetween(String amount1, String amount2);
 
     /**
      * This function returns a list of all the statements between the two dates
@@ -28,5 +28,5 @@ public interface StatementService {
      * @param toDate The date to which you want to get the data.
      * @return A list of statements.
      */
-    List<Statement> getData_between(String fromDate, String toDate);
+    List<Statement> getDateBetween(String fromDate, String toDate);
 }

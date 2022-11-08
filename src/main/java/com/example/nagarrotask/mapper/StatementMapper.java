@@ -26,7 +26,7 @@ public interface StatementMapper {
      * @return A list of Statement objects.
      */
     @Select("SELECT * from statement where datefield BETWEEN #{startDate} AND #{endDate}")
-    List<Statement> getData_between(@PathParam("startDate") final BigDecimal startDate, @PathParam("endDate") final BigDecimal endDate);
+    List<Statement> getDateBetween(@PathParam("startDate") final BigDecimal startDate, @PathParam("endDate") final BigDecimal endDate);
 
     /**
      * This function returns a list of statements with amounts between the two amounts specified in the function
@@ -36,5 +36,5 @@ public interface StatementMapper {
      * @return A list of statements with amounts between the two amounts.
      */
     @Select("SELECT * from statement where amount BETWEEN #{fromAmount} AND #{toAmount} Order by amount ASC")
-    List<Statement> getAmount_between(@PathParam("fromAmount") final BigDecimal fromAmount, @PathParam("toAmount") final BigDecimal toAmount);
+    List<Statement> getAmountBetween(@PathParam("fromAmount") final BigDecimal fromAmount, @PathParam("toAmount") final BigDecimal toAmount);
 }

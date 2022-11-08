@@ -22,17 +22,17 @@ public class IStatementService implements StatementService {
     }
 
     @Override
-    public List<Statement> getAmount_between(String amount1, String amount2) {
+    public List<Statement> getAmountBetween(String amount1, String amount2) {
         BigDecimal dec1 = TextToDecimal.toBigDecimal(amount1);
         BigDecimal dec2 = TextToDecimal.toBigDecimal(amount2);
-        return statementMapper.getAmount_between(dec1, dec2);
+        return statementMapper.getAmountBetween(dec1, dec2);
     }
 
     @Override
-    public List<Statement> getData_between(String fromDate, String toDate) {
+    public List<Statement> getDateBetween(String fromDate, String toDate) {
         BigDecimal dec1 = TextToDecimal.toBigDecimal(fromDate);
         BigDecimal dec2 = TextToDecimal.toBigDecimal(toDate);
-        return statementMapper.getData_between(dec1, dec2);
+        return statementMapper.getDateBetween(dec1, dec2);
     }
 
 }

@@ -36,8 +36,8 @@ public class StatementController {
      * @return A list of statements
      */
     @GetMapping("/date/{startDate}/{endDate}")
-    public List<Statement> getData_between(@PathVariable(value = "startDate") String fromDate, @PathVariable(value = "endDate") String toDate){
-        return statementService.getData_between(fromDate, toDate);
+    public List<Statement> getDateBetween(@PathVariable(value = "startDate") String fromDate, @PathVariable(value = "endDate") String toDate){
+        return statementService.getDateBetween(fromDate, toDate);
     }
 
     /**
@@ -48,7 +48,7 @@ public class StatementController {
      * @return A list of statements
      */
     @GetMapping("/amount/{amount1}/{amount2}")
-    public List<Statement> getAmount_between(@PathVariable(value = "amount1") String amount1 , @PathVariable(value = "amount2") String amount2){
-        return statementService.getAmount_between(amount1, amount2);
+    public List<Statement> getAmountBetween(@PathVariable(value = "amount1") String amount1 , @PathVariable(value = "amount2") String amount2){
+        return statementService.getAmountBetween(amount1, amount2);
     }
 }
