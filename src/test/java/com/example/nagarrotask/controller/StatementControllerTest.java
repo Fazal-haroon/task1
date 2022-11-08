@@ -34,17 +34,17 @@ class StatementControllerTest {
 
     @Test
     void testGetData_between() {
-        when(statementService.getData_between(anyString(), anyString())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
+        when(statementService.getDateBetween(anyString(), anyString())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
 
-        List<Statement> result = statementController.getData_between("fromDate", "toDate");
+        List<Statement> result = statementController.getDateBetween("fromDate", "toDate");
         Assertions.assertEquals(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")), result);
     }
 
     @Test
     void testGetAmount_between() {
-        when(statementService.getAmount_between(anyString(), anyString())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
+        when(statementService.getAmountBetween(anyString(), anyString())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
 
-        List<Statement> result = statementController.getAmount_between("amount1", "amount2");
+        List<Statement> result = statementController.getAmountBetween("amount1", "amount2");
         Assertions.assertEquals(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")), result);
     }
 }

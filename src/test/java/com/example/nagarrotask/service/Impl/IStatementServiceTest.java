@@ -34,17 +34,17 @@ class IStatementServiceTest {
 
     @Test
     void testGetAmount_between() {
-        when(statementMapper.getAmount_between(any(), any())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
+        when(statementMapper.getAmountBetween(any(), any())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
 
-        List<Statement> result = iStatementService.getAmount_between("amount1", "amount2");
+        List<Statement> result = iStatementService.getAmountBetween("amount1", "amount2");
         Assertions.assertEquals(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")), result);
     }
 
     @Test
     void testGetData_between() {
-        when(statementMapper.getData_between(any(), any())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
+        when(statementMapper.getDateBetween(any(), any())).thenReturn(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")));
 
-        List<Statement> result = iStatementService.getData_between("10", "20");
+        List<Statement> result = iStatementService.getDateBetween("10", "20");
         Assertions.assertEquals(List.of(new Statement(1, 3, "09.08.2020", "535.197875027054")), result);
     }
 }
