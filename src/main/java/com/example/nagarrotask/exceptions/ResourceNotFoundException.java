@@ -5,15 +5,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class NoSuchAccountExistsException extends RuntimeException {
+public class ResourceNotFoundException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
     private String message;
 
-    public NoSuchAccountExistsException() {
+    public ResourceNotFoundException() {
     }
 
-    public NoSuchAccountExistsException(String message) {
+    public ResourceNotFoundException(String message) {
         super(message);
         this.message = message;
     }
