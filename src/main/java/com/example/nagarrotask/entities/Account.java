@@ -13,16 +13,16 @@ import java.security.NoSuchAlgorithmException;
 @AllArgsConstructor
 @Setter
 public class Account {
-    private Integer ID;
-    private String account_type;
-    private String account_number;
+    private Integer id;
+    private String accountType;
+    private String accountNumber;
 
-    public Integer getID() {
-        return ID;
+    public Integer getid() {
+        return id;
     }
 
-    public String getAccount_type() {
-        return account_type;
+    public String getAccountType() {
+        return accountType;
     }
 
     /**
@@ -30,8 +30,8 @@ public class Account {
      *
      * @return The account number is being returned.
      */
-    public String getAccount_number() throws NoSuchAlgorithmException {
-        String plaintext = this.account_number;
+    public String getAccountNumber() throws NoSuchAlgorithmException {
+        String plaintext = this.accountNumber;
         MessageDigest m = MessageDigest.getInstance("MD5");
         m.reset();
         m.update(plaintext.getBytes());
@@ -48,14 +48,14 @@ public class Account {
     /**
      * The toString() method returns a string representation of the object
      *
-     * @return The account ID, account type, and account number.
+     * @return The account id, account type, and account number.
      */
     @Override
     public String toString() {
         return "Account{" +
-                "ID=" + ID +
-                ", account_type='" + account_type + '\'' +
-                ", account_number='" + account_number + '\'' +
+                "id=" + id +
+                ", accountType='" + accountType + '\'' +
+                ", accountNumber='" + accountNumber + '\'' +
                 '}';
     }
 }

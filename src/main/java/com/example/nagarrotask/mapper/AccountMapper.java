@@ -2,6 +2,8 @@ package com.example.nagarrotask.mapper;
 
 import com.example.nagarrotask.entities.Account;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 import javax.websocket.server.PathParam;
@@ -15,6 +17,11 @@ public interface AccountMapper {
      * @return A list of all the accounts in the database.
      */
     @Select("SELECT * FROM account")
+    @Results({
+            @Result(property = "id", column = "ID"),
+            @Result(property = "accountNumber", column = "account_number"),
+            @Result(property = "accountType", column = "account_type")
+    })
     List<Account> getAllAccounts();
 
     /**
@@ -24,5 +31,10 @@ public interface AccountMapper {
      * @return An Account object
      */
     @Select("SELECT * FROM account WHERE ID = #{id}")
+    @Results({
+            @Result(property = "id", column = "ID"),
+            @Result(property = "accountNumber", column = "account_number"),
+            @Result(property = "accountType", column = "account_type")
+    })
     Account getAccount(@PathParam("id") final Integer id);
 }
