@@ -9,8 +9,8 @@ class TextToDecimalTest {
 
     @Test
     void testToBigDecimal() {
-        BigDecimal result = TextToDecimal.toBigDecimal("5.000.0009");
-        Assertions.assertEquals(new BigDecimal(50000009), result);
+        BigDecimal result = TextToDecimal.toBigDecimal("5.000000899999999859346644370816648006439208984375");
+        Assertions.assertEquals(new BigDecimal(5.000000899999999859346644370816648006439208984375), result);
     }
 }
 
